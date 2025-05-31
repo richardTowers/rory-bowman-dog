@@ -34,6 +34,8 @@ async function optimizeImages() {
     const metadata = await sharp(file).metadata();
     imageMetas.push({
       name,
+      width: metadata.width,
+      height: metadata.height,
       aspectRatio: metadata.width! / metadata.height!,
       variants: imageVariants,
     });
