@@ -9,6 +9,7 @@ import React from 'react';
 const inputDir = 'images';
 const outputDir = 'output/images';
 const htmlOut = 'output/index.html';
+const cssIn = 'style.css';
 const cssOut = 'output/style.css';
 
 const sizes = [400, 800, 1600]; // px widths
@@ -41,34 +42,11 @@ async function optimizeImages() {
   return imageMetas;
 }
 
-function generateCSS() {
-  return `
-body {
-  margin: 0;
-  padding: 2rem;
-  font-family: sans-serif;
-  background: #0b0c0c;
-}
-.gallery {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-`.trim();
-}
-
 async function main() {
   const images = await optimizeImages();
   const html = '<!DOCTYPE html>\n' + renderToStaticMarkup(<GalleryPage images={images} />);
   await fs.outputFile(htmlOut, html);
-  await fs.outputFile(cssOut, generateCSS());
+  await fs.copyFile(cssIn, cssOut)
   console.log('Gallery generated in /output');
 }
 
