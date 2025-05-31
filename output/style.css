@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: sans-serif;
+  background: #f0f0f0;
+}
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
