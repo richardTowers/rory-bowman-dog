@@ -49,6 +49,7 @@ async function main() {
   const html = '<!DOCTYPE html>\n' + renderToStaticMarkup(<GalleryPage images={images} />);
   await fs.outputFile(htmlOut, html);
   await fs.copyFile(cssIn, cssOut)
+  await fs.copyFile('og-image.jpg', 'output/og-image.jpg')
   console.log('Gallery generated in /output');
 }
 

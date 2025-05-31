@@ -38,9 +38,25 @@ export function GalleryPage({ images }: { images: ImageMeta[] }) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <title>Photo Gallery</title>
         <link rel="stylesheet" href="style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>rory.bowman.dog</title>
+        <meta name="title" content="rory.bowman.dog" />
+        <meta name="description" content="Uh, hi guys. It's me, Rory. I uh, made a website so I can go on the internet." />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rory.bowman.dog/" />
+        <meta property="og:title" content="rory.bowman.dog" />
+        <meta property="og:description" content="Uh, hi guys. It's me, Rory. I uh, made a website so I can go on the internet." />
+        <meta property="og:image" content="https://rory.bowman.dog/og-image.jpg" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="og:url" content="https://rory.bowman.dog/" />
+        <meta property="twitter:title" content="rory.bowman.dog" />
+        <meta property="twitter:description" content="Uh, hi guys. It's me, Rory. I uh, made a website so I can go on the internet." />
+        <meta property="twitter:image" content="https://rory.bowman.dog/og-image.jpg" />
+
       </head>
       <body>
         <div className="row">
